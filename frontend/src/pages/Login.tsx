@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card"
 import { Link, useNavigate } from "react-router-dom";
 import { loginSchema, type ILoginFormData } from "../validation/validation";
 import { useForm } from "react-hook-form";
-import * as apiClient from "../api/api";
+import * as apiClient from "../api/auth-user.api";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppContext } from "../contexts/AppContext";

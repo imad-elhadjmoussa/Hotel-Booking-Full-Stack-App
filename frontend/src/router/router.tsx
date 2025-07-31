@@ -2,8 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
-import Hotels from "../pages/Hotels";
 import Layout from "../layouts/Layout";
+import AddHotel from "../pages/AddHotel";
+import MyHotels from "../pages/MyHotels";
+import EditHotel from "../pages/EditHotel";
 
 export const router = createBrowserRouter([
     {
@@ -22,8 +24,16 @@ export const router = createBrowserRouter([
                 element: <Signup />,
             },
             {
-                path: "/hotels",
-                element: <Hotels />,
+                path: "/my-hotels",
+                element: <MyHotels />,
+            },
+            {
+                path: "/add-hotel",
+                element: <AddHotel />,
+            },
+            {
+                path: "/edit-hotel/:id",
+                element: <EditHotel />,
             }
         ],
     },

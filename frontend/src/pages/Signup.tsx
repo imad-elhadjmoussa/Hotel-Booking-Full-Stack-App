@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { registerSchema, type IRegisterFormData } from "../validation/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import * as apiClient from "../api/api";
+import * as apiClient from "../api/auth-user.api";
 import { useAppContext } from "../contexts/AppContext";
 import ButtonLoading from "../components/ButtonLoading";
 

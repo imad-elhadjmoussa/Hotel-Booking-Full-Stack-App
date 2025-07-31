@@ -1,8 +1,8 @@
 import { useUser } from "../contexts/UserContext";
 import { Button } from "../components/ui/button";
 import { Skeleton } from "../components/ui/skeleton";
-import { Link } from "react-router-dom";
-import { logout } from "../api/api";
+import { Link, useNavigate } from "react-router-dom";
+import { logout } from "../api/auth-user.api";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useAppContext } from "../contexts/AppContext";
 import ButtonLoading from "./ButtonLoading";
@@ -17,6 +17,7 @@ const AuthButtons = ({ mobile = false }: AuthButtonsProps) => {
     const { isLoggedIn, loading } = useUser();
     const { showToast } = useAppContext();
     const queryClient = useQueryClient();
+    const navigate = useNavigate();
 
     const {
         mutate,
@@ -26,6 +27,7 @@ const AuthButtons = ({ mobile = false }: AuthButtonsProps) => {
         onSuccess: async () => {
             await queryClient.invalidateQueries({ queryKey: ["validateToken"] });
             showToast({ message: "Logout Successful", type: "success" });
+            navigate("/");
         },
         onError: (error: Error) => {
             // Handle error during logout

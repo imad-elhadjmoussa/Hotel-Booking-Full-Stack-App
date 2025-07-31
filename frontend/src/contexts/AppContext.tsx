@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 
 type appContextType = {
     showToast: (message: ToastMessage) => void;
+    currency: string;
 }
 
 const appContext = createContext<appContextType | undefined>(undefined)
@@ -14,7 +15,7 @@ export const AppContextProvider = ({ children }: { children: React.ReactNode }) 
     };
 
     return (
-        <appContext.Provider value={{ showToast }}>
+        <appContext.Provider value={{ showToast, currency: "DA" }}>
             {children}
         </appContext.Provider>
     );

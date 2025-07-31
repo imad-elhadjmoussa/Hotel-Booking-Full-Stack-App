@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 import { useQuery } from "@tanstack/react-query";
-import * as apiClient from "../api/api";
+import * as apiClient from "../api/auth-user.api";
 
 type UserContextType = {
     isLoggedIn: boolean;
