@@ -30,7 +30,7 @@ function Login() {
     const mutation = useMutation({
         mutationFn: apiClient.login,
         onSuccess: async () => {
-            await queryClient.invalidateQueries({ queryKey: ["validateToken"] });
+            await queryClient.invalidateQueries({ queryKey: ["currentUser"] });
             showToast({
                 type: "success",
                 message: "logged in successfully!"

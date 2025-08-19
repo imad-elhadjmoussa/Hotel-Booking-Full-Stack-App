@@ -4,7 +4,7 @@ import { Label } from "../components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { addHotelSchema, type IAddHotelFormData } from "../validation/validation";
 import { useForm } from "react-hook-form";
-import * as apiClient from "../api/hotels.api";
+import * as apiClient from "../api/my-hotels.api";
 import { useMutation } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppContext } from "../contexts/AppContext";
@@ -73,7 +73,6 @@ function AddHotel() {
     });
 
     const onSubmit = async (data: IAddHotelFormData) => {
-        console.log(data)
         const formData = new FormData();
 
         // Append all non-file fields

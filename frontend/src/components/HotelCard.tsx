@@ -48,7 +48,7 @@ export function HotelCard({ hotel }: { hotel: Hotel }) {
             <div className="flex flex-col lg:flex-row">
 
                 {/* Image Gallery - Modern Carousel Style */}
-                <div className="lg:w-1/2 relative group">
+                <div className="lg:w-1/2 md:h-auto h-64 relative group">
                     {hotel.images.length > 0 ? (
                         <>
                             {/* Main Image */}

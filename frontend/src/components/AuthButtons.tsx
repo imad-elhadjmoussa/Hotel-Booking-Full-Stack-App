@@ -25,7 +25,7 @@ const AuthButtons = ({ mobile = false }: AuthButtonsProps) => {
     } = useMutation({
         mutationFn: logout,
         onSuccess: async () => {
-            await queryClient.invalidateQueries({ queryKey: ["validateToken"] });
+            await queryClient.invalidateQueries({ queryKey: ["currentUser"] });
             showToast({ message: "Logout Successful", type: "success" });
             navigate("/");
         },

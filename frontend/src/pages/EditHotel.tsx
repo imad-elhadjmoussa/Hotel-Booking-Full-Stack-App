@@ -4,7 +4,7 @@ import { Label } from "../components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 import { addHotelSchema, type IAddHotelFormData } from "../validation/validation";
 import { useForm } from "react-hook-form";
-import * as apiClient from "../api/hotels.api";
+import * as apiClient from "../api/my-hotels.api";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useAppContext } from "../contexts/AppContext";
@@ -24,8 +24,8 @@ import { ImageUpload } from "../components/ImageUpload";
 import { facilityOptions, hotelTypes } from "../config/constants";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
-import EditHotelSkeleton from "./EditHotelSkeleton";
 import Error from "../components/Error";
+import EditHotelSkeleton from "../components/Skeletons/EditHotelSkeleton";
 
 function EditHotel() {
     const { id } = useParams();

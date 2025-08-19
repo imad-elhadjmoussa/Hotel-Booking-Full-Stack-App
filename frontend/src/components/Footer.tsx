@@ -1,8 +1,8 @@
 import {
+    ArrowUpRight,
     Facebook,
-    Twitter,
     Instagram,
-    Linkedin
+    Linkedin,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
@@ -11,27 +11,38 @@ import { Link } from "react-router-dom";
 function Footer() {
     return (
         <footer className="bg-background border-t">
-            <div className="container py-12 ">
+            <div className="container pt-12 ">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
                     {/* Brand Column */}
                     <div className="space-y-4">
-                        <h3 className="text-xl font-bold">Hotel Haven</h3>
+                        <Link to="/" className="flex items-center gap-2">
+                            <img
+                                src="./logo.png"
+                                alt="HotelBooking Logo"
+                                className="size-7"
+                            />
+                            <span className="text-xl font-bold tracking-tight">HotelBooking</span>
+                        </Link>
                         <p className="text-muted-foreground">
                             Discover luxury stays and unforgettable experiences around the world.
                         </p>
                         <div className="flex space-x-4">
                             <Button variant="ghost" size="icon">
-                                <Facebook className="h-5 w-5" />
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                                    <Facebook className="h-5 w-5" />
+                                </a>
+                            </Button>
+
+                            <Button variant="ghost" size="icon">
+                                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                                    <Instagram className="h-5 w-5" />
+                                </a>
                             </Button>
                             <Button variant="ghost" size="icon">
-                                <Twitter className="h-5 w-5" />
-                            </Button>
-                            <Button variant="ghost" size="icon">
-                                <Instagram className="h-5 w-5" />
-                            </Button>
-                            <Button variant="ghost" size="icon">
-                                <Linkedin className="h-5 w-5" />
+                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                                    <Linkedin className="h-5 w-5" />
+                                </a>
                             </Button>
                         </div>
                     </div>
@@ -46,18 +57,19 @@ function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/hotels" className="hover:text-primary transition-colors">
+                                <Link to="/search-hotels" className="hover:text-primary transition-colors">
                                     Hotels
                                 </Link>
                             </li>
+
                             <li>
-                                <Link to="/deals" className="hover:text-primary transition-colors">
-                                    Special Deals
+                                <Link to="/about-us" className="hover:text-primary transition-colors">
+                                    About Us
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/about" className="hover:text-primary transition-colors">
-                                    About Us
+                                <Link to="/contact-us" className="hover:text-primary transition-colors">
+                                    Contact Us
                                 </Link>
                             </li>
                         </ul>
@@ -68,22 +80,18 @@ function Footer() {
                         <h4 className="font-semibold">Support</h4>
                         <ul className="space-y-2 text-muted-foreground">
                             <li>
-                                <Link to="/faq" className="hover:text-primary transition-colors">
+                                <Link to="/contact-us" className="hover:text-primary transition-colors">
                                     FAQs
                                 </Link>
                             </li>
                             <li>
-                                <Link to="/contact" className="hover:text-primary transition-colors">
+                                <Link to="/contact-us" className="hover:text-primary transition-colors">
                                     Contact Us
                                 </Link>
                             </li>
+
                             <li>
-                                <Link to="/privacy" className="hover:text-primary transition-colors">
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/terms" className="hover:text-primary transition-colors">
+                                <Link to="/about-us" className="hover:text-primary transition-colors">
                                     Terms of Service
                                 </Link>
                             </li>
@@ -108,9 +116,17 @@ function Footer() {
                 </div>
 
                 {/* Copyright */}
-                <div className="border-t mt-12 pt-6 text-center text-sm text-muted-foreground">
-                    © {new Date().getFullYear()} Hotel Haven. All rights reserved.
+                <div className="border-t py-2 text-center text-sm text-muted-foreground">
+                    © {new Date().getFullYear()} HotelBooking. All rights reserved.
                 </div>
+            </div>
+            <div className=" flex justify-center gap-2 py-2 bg-gray-900 w-full text-center text-white ">
+                Developed by Imad Eddine Elhadjmoussa More About Me:
+                <a href="https://imad-elhadjmoussa.github.io/imad-eddine-elhadjmouss-info/" target="_blank" rel="noopener noreferrer">
+                    <span className=" flex items-center gap-2 px-3 bg-white text-gray-900 font-bold">
+                        Contact Me  <ArrowUpRight className=" size-4 " />
+                    </span>
+                </a>
             </div>
         </footer>
     );

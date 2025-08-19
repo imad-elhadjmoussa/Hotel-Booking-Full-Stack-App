@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { getMyHotels } from "../api/hotels.api"
+import { getMyHotels } from "../api/my-hotels.api"
 import { HotelCard } from "../components/HotelCard"
 import { Button } from "../components/ui/button";
 import type { Hotel } from "../types/types";

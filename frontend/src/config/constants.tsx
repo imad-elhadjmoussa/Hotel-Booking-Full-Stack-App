@@ -10,6 +10,14 @@ export const facilityOptions = [
     { value: "Restaurant", label: "Restaurant" },
 ];
 
+export const hotelFacilities = [
+    "Free WiFi",
+    "Free Parking",
+    "Swimming Pool",
+    "Gym",
+    "Spa",
+    "Restaurant",
+];
 
 export const hotelTypes = ["Hotel", "Resort", "Villa", "Apartment", "Hostel"];
 

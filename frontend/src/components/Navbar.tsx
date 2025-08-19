@@ -10,10 +10,9 @@ const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { path: "/", label: "Home" },
-        { path: "/hotels", label: "Hotels" },
-        { path: "/about", label: "About Us" },
-        { path: "/contact", label: "Contact" }
+        { path: "/search-hotels", label: "Hotels" },
+        { path: "/about-us", label: "About Us" },
+        { path: "/contact-us", label: "Contact Us" }
     ];
 
     const toggleMobileMenu = () => {
@@ -25,9 +24,14 @@ const Navbar = () => {
             <nav className="fixed top-0 z-50 w-full bg-white border-b">
                 <div className="container flex h-16 items-center justify-between">
                     {/* Logo */}
-                    <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold tracking-tight">Hotel Haven</span>
-                    </div>
+                    <Link to="/" className="flex items-center gap-2">
+                        <img
+                            src="./logo.png"
+                            alt="HotelBooking Logo"
+                            className="size-7"
+                        />
+                        <span className="text-xl font-bold tracking-tight">HotelBooking</span>
+                    </Link>
 
                     {/* Desktop Navigation Links */}
                     <div className="hidden md:flex items-center gap-8 relative">

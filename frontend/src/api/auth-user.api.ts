@@ -66,3 +66,16 @@ export const logout = async () => {
         }
     }
 }
+
+export const getCurrentUser = async () => {
+    try {
+        const response = await api.get("/users/me");
+        return response.data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            throw new Error(error.response?.data.message || "Failed to fetch current user");
+        } else {
+            throw new Error("An unexpected error occurred");
+        }
+    }
+}

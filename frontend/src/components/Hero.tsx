@@ -1,4 +1,4 @@
-import SearchFilterCard from "./SearchFilterCard";
+import SearchBar from "./SearchBar";
 
 const HeroSection = () => {
     return (
@@ -24,8 +24,10 @@ const HeroSection = () => {
                 </p>
             </div>
 
-            {/* Search Filter Card */}
-            <SearchFilterCard />
+            {/* Search Bar */}
+            <div className="absolute bottom-0 left-1/2 w-full max-w-5xl px-4 transform -translate-x-1/2 translate-y-1/2">
+                <SearchBar />
+            </div>
 
         </section>
     );

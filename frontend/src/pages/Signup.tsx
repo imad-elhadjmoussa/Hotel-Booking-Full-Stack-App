@@ -30,7 +30,7 @@ function Signup() {
     const mutation = useMutation({
         mutationFn: apiClient.register,
         onSuccess: async () => {
-            await queryClient.invalidateQueries({ queryKey: ["validateToken"] });
+            await queryClient.invalidateQueries({ queryKey: ["currentUser"] });
             showToast({
                 type: "success",
                 message: "Signup successful!"
