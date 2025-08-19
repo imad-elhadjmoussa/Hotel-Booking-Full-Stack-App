@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import User from "../models/user.model";
 import jwt from "jsonwebtoken";
 import { validationResult } from "express-validator";
+import { CurrentUser } from "../types/types";
 
 
 export const register = async (req: Request, res: Response): Promise<any> => {
@@ -51,3 +52,34 @@ export const register = async (req: Request, res: Response): Promise<any> => {
     }
 }
 
+export const getCurrentUser = async (req: Request, res: Response): Promise<any> => {
+    try {
+        const user = await User.findById(req.userId).select("-password -__v"); // Exclude password and version field
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                message: "User not found"
+            });
+        }
+        const currentUser: CurrentUser = {
+            _id: req.userId,
+            firstName: user?.firstName || "",
+            lastName: user?.lastName || "",
+            email: user?.email || "",
+            createdAt: user?.createdAt || new Date(),
+            updatedAt: user?.updatedAt || new Date()
+        };
+
+        return res.status(200).json({
+            success: true,
+            data: currentUser,
+            message: "User fetched successfully"
+        });
+    } catch (error) {
+        console.log("Error fetching current user:", error);
+        return res.status(500).json({
+            success: false,
+            message: "Internal server error"
+        });
+    }
+};

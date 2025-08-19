@@ -2,8 +2,10 @@ import express from 'express';
 
 const router = express.Router();
 
-import { getSearchedHotels } from '../controllers/hotels.controller';
+import { getHotelById, getHotels, getSearchedHotels } from '../controllers/hotels.controller';
 
 router.get('/search', getSearchedHotels);
+router.get('/:id', getHotelById);
+router.get('/', getHotels);
 
 export default router;
