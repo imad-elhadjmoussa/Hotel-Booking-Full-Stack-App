@@ -10,7 +10,7 @@ import {
     Baby,
     Wifi,
     Phone,
-    Mail,
+    
     Clock
 } from "lucide-react";
 import {
